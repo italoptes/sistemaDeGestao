@@ -25,8 +25,11 @@ public class ConsultoriaTI implements ServicoTI{
 
     @Override
     public String getDescricao() {
-        int reunioesExtra = qtdReunioes - 5;
-        return "Consultoria TI: " + ", Duração: " + getDuracao() + ", R$: " + calcularPreco() + ", Reuniões Extras: " + reunioesExtra;
+        int reunioesExtra = 0;
+        if (reunioesExtra > 5){
+            reunioesExtra = qtdReunioes - 5;
+        }
+        return "Consultoria TI: " + "Duração: " + getDuracao() + " R$: " + calcularPreco() + ", Reuniões Extras: " + reunioesExtra;
     }
 
     @Override
